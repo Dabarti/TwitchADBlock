@@ -9,7 +9,8 @@ window.fetch = (url, init, ...args) => {
 			init &&
 			typeof init.body === "string" &&
 			init.body.includes("PlaybackAccessToken")
-		) {
+		) 
+		{
 			const newBody = JSON.parse(init.body);
 			newBody.variables.playerType = "thunderdome";
 			init.body = JSON.stringify(newBody);
